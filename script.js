@@ -1,33 +1,56 @@
+let posunMinut = 0; // globální proměnná pro uchování posunu
+
 function zobrazCas() {
-    var datum = new Date();
-    var den = datum.getDay();
-    var mesic = datum.getMonth() + 1;
-    var hodiny = datum.getHours();
-    var minuty = datum.getMinutes();
-    var sekundy = datum.getSeconds();
-    var rok = datum.getFullYear();
-    var cislo = datum.getDate();
-    var x;
+  let datum = new Date();
   
-    var dny = ["neděle","pondělí","úterý","středa","čtvrtek","pátek","sobota"];
+  // aplikujeme posun minut
+  datum.setMinutes(datum.getMinutes() + posunMinut);
 
- 
-    var mesice = ["ledna","února","března","dubna","května","června","července","srpna","září","října","listopadu","prosince"];
+  let den = datum.getDay();
+  let mesic = datum.getMonth();
+  let hodiny = datum.getHours();
+  let minuty = datum.getMinutes();
+  let sekundy = datum.getSeconds();
+  let rok = datum.getFullYear();
+  let cislo = datum.getDate();
 
-    var x = dny[den];       
-    var m = mesice[mesic];
-  
-    if (hodiny < 10) hodiny = "0" + hodiny;
-    if (minuty < 10) minuty = "0" + minuty;
-    if (sekundy < 10) sekundy = "0" + sekundy;
-  
-    const element = document.getElementById('cas');
-    element.innerHTML = hodiny + ":" + minuty + ":" + sekundy;
+  const dny = ["neděle","pondělí","úterý","středa","čtvrtek","pátek","sobota"];
+  const mesice = ["ledna","února","března","dubna","května","června","července","srpna","září","října","listopadu","prosince"];
 
-    const ele = document.getElementById('datum');
-    ele.innerHTML = "Je " + x + " " + cislo + ". " + m + " " + rok;
-  }
-  
-  zobrazCas();
-  
-  setInterval(zobrazCas, 1000);
+  if (hodiny < 10) hodiny = "0" + hodiny;
+  if (minuty < 10) minuty = "0" + minuty;
+  if (sekundy < 10) sekundy = "0" + sekundy;
+
+  document.getElementById('cas').innerHTML = hodiny + ":" + minuty + ":" + sekundy;
+  document.getElementById('datum').innerHTML = "Je " + dny[den] + " " + cislo + ". " + mesice[mesic] + " " + rok;
+}
+
+function pridejMinuty() {
+  const input = document.getElementById('minuty').value;
+  if (input !== "") posunMinut += parseInt(input);
+}
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+zobrazCas();
+setInterval(zobrazCas, 1000);
