@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <title>Document</title>
 </head>
+
 <body>
     <div id="cas"></div>
     <div id="datum"></div>
+
+    <div class="cas-control">
+        <input type="number" id="minuty" placeholder="Zadej minuty">
+        <button onclick="pridejMinuty()">Přidat minuty</button>
+    </div>
+
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="https://tipyjakfotit.cz/wp-content/uploads/2013/07/shutterstock_976966161.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://media.xxxlutz.com/i/xxxlutz/PIrb85YSd76EMbFlJXJrAgeg/?fmt=auto&%24hq%24=&w=1200">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://autorskesperky.com/img/cms/krajina-1.jpg">
+            </div>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
