@@ -1,54 +1,72 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: #111;
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center; 
+}
+
+#cas {
+  font-size: 100px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#datum {
+  font-size: 30px;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+.cas-control {
+  margin-top: 20px;
+}
+
+.cas-control input {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 100px;
+}
+
+.cas-control button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: lightblue;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.cas-control button:hover {
+  background-color: deepskyblue;
+}
+
+@media (max-width: 400px) {
   #cas {
-    text-align: center;
-    width: 100%;
-    font-weight: bold;
-    font-size: 120px;
+    font-size: 50px;
   }
-  
   #datum {
-    text-align: center;
-    width: 100%;
-    font-size: 32px;
+    font-size: 20px;
+  }
+  .cas-control input, .cas-control button {
+    width: 80%;  
+    margin: 5px auto;
+    display: block;
+  }
+}
+
+  .swiper {
     margin-top: 20px;
-    opacity: 0.85;
-  }
-  
-  @media (max-width: 1200px) {
-    #cas {
-      font-size: 90px;
-    }
-    #datum {
-      font-size: 28px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    #cas {
-      font-size: 65px;
-    }
-    #datum {
-      font-size: 24px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    #cas {
-      font-size: 48px;
-    }
-    #datum {
-      font-size: 20px;
-    }
-  }
+  width: 600px;
+  height: 300px;
+}
+
+.swiper-slide img {
+    width: 100%;  
+    height: 100%; 
+    object-fit: contain;
+}
